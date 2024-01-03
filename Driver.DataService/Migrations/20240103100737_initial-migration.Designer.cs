@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Driver.DataService.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240101112122_initial-migration")]
+    [Migration("20240103100737_initial-migration")]
     partial class initialmigration
     {
         /// <inheritdoc />
@@ -46,9 +46,8 @@ namespace Driver.DataService.Migrations
                     b.Property<int>("RaceWins")
                         .HasColumnType("integer");
 
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("Status")
+                        .HasColumnType("integer");
 
                     b.Property<DateTime>("UpdatedDate")
                         .HasColumnType("timestamp with time zone");
@@ -86,9 +85,8 @@ namespace Driver.DataService.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("Status")
+                        .HasColumnType("integer");
 
                     b.Property<DateTime>("UpdatedDate")
                         .HasColumnType("timestamp with time zone");
