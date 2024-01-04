@@ -4,6 +4,7 @@ using Driver.DataService.Repositories.Interfaces;
 using Driver.Entities.DbSet;
 using Driver.Entities.Dtos.Requests;
 using Driver.Entities.Dtos.Responses;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DriverAPI.Controllers
@@ -12,7 +13,8 @@ namespace DriverAPI.Controllers
     {
         public AchievementsController(
             IUnitOfWork unitOfWork,
-            IMapper mapper) : base(unitOfWork, mapper)
+            IMapper mapper,
+            IMediator mediator) : base(unitOfWork, mapper, mediator)
         {
         }
 
